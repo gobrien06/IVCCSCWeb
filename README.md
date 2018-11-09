@@ -9,4 +9,3 @@ For any inquiries please contact:
    Front-end : Lead <br/>
     [Steve](https://github.com/SomeGuyWhoTalks)
    : Back-end Lead <br/>
-
