@@ -7,5 +7,5 @@ For any inquiries please contact:<br/>
    : Project Manager <br/>
     [Gabby](https://github.com/gobrien06) : <br/>
    Front-end : Lead <br/>
-    [Steve](https://github.com/SomeGuyWhoTalks)
+    [Steve](https://github.com/SomeGuyWhoTalks)<br/>
    : Back-end Lead <br/>
