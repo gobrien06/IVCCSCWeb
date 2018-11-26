@@ -59,6 +59,12 @@ export default class Forms extends Component {
       </FormGroup>
 
       </form>
+      <br />
+      <p>
+        {this.state.email}
+        <br/>
+        {this.state.password}
+      </p>
     );
   }
 /* example of how to call API
