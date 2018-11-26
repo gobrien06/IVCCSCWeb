@@ -6,44 +6,38 @@ export default class Forms extends Component {
 
   constructor(props){
     super(props);
-  this.state={
+    this.state={ //state 1 = blank and not sent
     email:'',
     password:'',
+    isSent:false,
 
   }
   }
-  getUser=(e)=>{
+  getUser=(e)=>{ //declaring user object to post
     e.preventDefault();
     const user={
       email: this.state.email,
       password:this.state.password,
     };
-    Axios.post('http://localhost:8000/forms',{user}) //tries to post user object to server
+    Axios.post('http://localhost:8000',{user}) //tries to post user object to server - replace this
     .then(res=>{
       console.log(res);
       console.log(res.data);
     })
   }
 
-  handleChange = (e)=>{
-    this.setState.email({email:e.target.elements.email.value});
-    this.setState.password({password:e.target.elements.password.value});
+  handleChange = (e)=>{ //setState of email and pass to form text, state n
+    this.setState({email:e.target.elements.email.value});
+    this.setState({password:e.target.elements.password.value});
+    this.setState({isSent:true});
+    e.preventDefault(); //remove this if you want page to refresh after
   }
-  /* for calling API
-  componentDidMount(){
-    fetch('') //insert api here
-    .then(res=>res.json())
-    .then(json => {
-      this.setState({
-        isLoaded:true,
-      })
-    });
-  }
-  */
+
   render() {
     return (
-      <form>
-      <Button type="submit" bsStyle="Primary" onclick={this.handleChange}>
+      <div>
+      <form onSubmit={this.handleChange}>
+      <Button type="submit">
           Login
         </Button>
         <br/>
@@ -59,12 +53,9 @@ export default class Forms extends Component {
       </FormGroup>
 
       </form>
-      <br />
-      <p>
-        {this.state.email}
-        <br/>
-        {this.state.password}
-      </p>
+      <p> Your email is: {this.state.email}</p>
+      <p> Your password is: {this.state.password}</p>
+      </div>
     );
   }
 /* example of how to call API
@@ -77,6 +68,17 @@ export default class Forms extends Component {
     .then(response=>{
       console.log(JSON.stringify(response));
     })
+  }
+  */
+   /* for calling API
+  componentDidMount(){
+    fetch('') //insert api here
+    .then(res=>res.json())
+    .then(json => {
+      this.setState({
+        isLoaded:true,
+      })
+    });
   }
   */
 }

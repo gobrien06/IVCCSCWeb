@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Forms from './forms.js';
+import Forms from './components/forms.js';
 import './App.css';
 import axios from 'axios';
 
