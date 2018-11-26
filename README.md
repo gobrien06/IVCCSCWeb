@@ -1,4 +1,4 @@
-<h2> Testing Repo for blogBase </h2>
+<h2> blogBase </h2>
 <p>This is the repository for any front-end and back-end testing of blogBase. Any edits should be properly documented with date, time, and changed files.</p>
 
 <h3> Contact </h3>
