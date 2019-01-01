@@ -4,7 +4,7 @@
 <h3> Contact </h3>
 For any inquiries please contact:<br/>
      [AJ](https://github.com/ashvinj99) <br/>
-   : Project Manager <br/>
+   : number one poser<br/>
     [Gabby](https://github.com/gobrien06) : <br/>
    Front-end : Lead <br/>
     [Steve](https://github.com/SomeGuyWhoTalks)<br/>
