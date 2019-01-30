@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Input, FormGroup, Label, Button, Modal,ModalHeader, ModalBody, Form} from 'reactstrap';
+import {Input, FormGroup, Label, Button, Modal, ModalHeader, ModalBody, ModalFooter, Form} from 'reactstrap';
 import Axios from 'axios';
 
 export default class LoginModal extends Component{
@@ -20,6 +20,7 @@ export default class LoginModal extends Component{
     };
     Axios.post('http://localhost:8000',{user}) //tries to post user object to server - replace this
     .then(res=>{
+      //remove log later
       console.log(res);
       console.log(res.data);
     })
@@ -35,7 +36,7 @@ export default class LoginModal extends Component{
   render() {
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="loginModal">
-      <ModalHeader toggle={this.props.toggle}> Login </ModalHeader>
+      <ModalHeader> Login </ModalHeader>
       <ModalBody>
       <Form onSubmit={this.handleChange}>
         <FormGroup controlId="formControlsText">
@@ -48,14 +49,18 @@ export default class LoginModal extends Component{
          <Input type="text" placeholder="Enter password" name="password"/>
       </FormGroup>
       <br/>
-      <br/>
       <Button type="submit">
-      Login
+        Submit
       </Button>
       <p> Your email is: {this.state.email}</p>
       <p> Your password is: {this.state.password}</p>
       </Form>
       </ModalBody>
+      <ModalFooter>
+      <Button onClick={this.props.toggle}>
+      Cancel
+      </Button>
+      </ModalFooter>
       </Modal>
     );
   }
