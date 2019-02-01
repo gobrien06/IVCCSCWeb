@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Input, FormGroup, Label, Button, Modal, ModalHeader, ModalBody, ModalFooter, Form} from 'reactstrap';
 import Axios from 'axios';
-
+import "./LoginModal.css";
 export default class LoginModal extends Component{
   constructor(props){
     super(props);
@@ -38,8 +38,10 @@ export default class LoginModal extends Component{
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="loginModal">
       <ModalHeader> Login
         <Button onClick={this.props.toggle}
-        close aria-label="Cancel">
-          <span aria-hidden>x</span>
+        close aria-label="Cancel"
+        size="sm"
+        className="close">
+        <span aria-hidden>x</span>
         </Button>
       </ModalHeader>
       <ModalBody>
@@ -54,14 +56,16 @@ export default class LoginModal extends Component{
          <Input type="text" placeholder="Enter password" name="password"/>
       </FormGroup>
       <br/>
-      <Button type="submit">
+      <Button type="submit"
+      color="secondary"
+      className="submit">
         Submit
       </Button>
-      <p> Your email is: {this.state.email}</p>
-      <p> Your password is: {this.state.password}</p>
       </Form>
       </ModalBody>
       <ModalFooter>
+      <p> Your email is: {this.state.email}</p>
+      <p> Your password is: {this.state.password}</p>
       </ModalFooter>
       </Modal>
     );

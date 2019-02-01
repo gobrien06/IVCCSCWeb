@@ -18,11 +18,12 @@ export default class NavBar extends Component{
        <div class="navBar">
         blogBase
          <Button
-         color="secondary"
+         outline color="warning"
+         size="sm"
          onClick={()=>{
           this.toggle()
          }}
-         >
+         className="login">
          Login
          </Button>
          <LoginModal isOpen={this.state.isModalOpen} toggle={this.toggle}/>
