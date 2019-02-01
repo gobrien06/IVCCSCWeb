@@ -36,7 +36,12 @@ export default class LoginModal extends Component{
   render() {
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="loginModal">
-      <ModalHeader> Login </ModalHeader>
+      <ModalHeader> Login
+        <Button onClick={this.props.toggle}
+        close aria-label="Cancel">
+          <span aria-hidden>x</span>
+        </Button>
+      </ModalHeader>
       <ModalBody>
       <Form onSubmit={this.handleChange}>
         <FormGroup controlId="formControlsText">
@@ -57,9 +62,6 @@ export default class LoginModal extends Component{
       </Form>
       </ModalBody>
       <ModalFooter>
-      <Button onClick={this.props.toggle}>
-      Cancel
-      </Button>
       </ModalFooter>
       </Modal>
     );
