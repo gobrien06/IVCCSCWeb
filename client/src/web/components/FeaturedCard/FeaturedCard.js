@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Card, CardFooter, CardBody, CardTitle, CardImg, CardText, Button} from 'reactstrap';
-import Axios from 'axios';
 
 export default class FeaturedCard extends Component{
   constructor(props){

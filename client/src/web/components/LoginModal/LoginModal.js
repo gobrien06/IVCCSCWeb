@@ -4,20 +4,20 @@ import "./LoginModal.scss";
 export default class LoginModal extends Component{
   constructor(props){
     super(props);
-    this.state={ //state 1 = blank and not sent
+    this.state={
       email:'',
       password:'',
       isSent:false,
     }
   }
 
-  getUser=(e)=>{ //declaring user object to post
+  getUser=(e)=>{
     e.preventDefault();
     const user={
       email: this.state.email,
       password:this.state.password,
     };
-   /* Axios.post('http://localhost:8000',{user}) //replacing axios
+   /* Axios.post('http://localhost:8000',{user}) //replacing axios -- DONT FORGET
     .then(res=>{
       //remove log later
       console.log(res);
@@ -25,26 +25,28 @@ export default class LoginModal extends Component{
     })*/
   }
 
-  handleChange = (e)=>{ //setState of email and pass to form text, state n
+  handleChange = (e)=>{
     this.setState({email:e.target.elements.email.value});
     this.setState({password:e.target.elements.password.value});
     this.setState({isSent:true});
-    e.preventDefault(); //remove this if you want page to refresh after
+    e.preventDefault();
   }
 
   render() {
       //MAKE SURE TO REMOVE MODALFOOTER
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="loginModal">
-      <ModalHeader> Login
-      </ModalHeader>
-      <ModalBody>
+      <ModalHeader>
       <Button onClick={this.props.toggle}
       close aria-label="Cancel"
       size="sm"
       className="close">
-      <span aria-hidden>x</span>
+      x
       </Button>
+      Login
+      </ModalHeader>
+      <ModalBody>
+
       <Form onSubmit={this.handleChange}>
         <FormGroup controlId="formControlsText">
           <Label>Email:</Label>
@@ -64,7 +66,7 @@ export default class LoginModal extends Component{
       </Form>
       </ModalBody>
       <ModalFooter>
-      <p> Your email is: {this.state.email}</p>
+      <p> Your email is: {this.state.email}</p> {/*remove later - testing only*/}
       <p> Your password is: {this.state.password}</p>
       </ModalFooter>
       </Modal>
