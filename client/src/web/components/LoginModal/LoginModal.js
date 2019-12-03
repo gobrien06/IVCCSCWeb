@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Input, FormGroup, Label, Button, Modal, ModalHeader, ModalBody, ModalFooter, Form} from 'reactstrap';
-import Axios from 'axios';
 import "./LoginModal.scss";
 export default class LoginModal extends Component{
   constructor(props){
@@ -18,12 +17,12 @@ export default class LoginModal extends Component{
       email: this.state.email,
       password:this.state.password,
     };
-    Axios.post('http://localhost:8000',{user}) //tries to post user object to server - replace this
+   /* Axios.post('http://localhost:8000',{user}) //replacing axios
     .then(res=>{
       //remove log later
       console.log(res);
       console.log(res.data);
-    })
+    })*/
   }
 
   handleChange = (e)=>{ //setState of email and pass to form text, state n
