@@ -1,14 +1,14 @@
 .navBar{
   padding-left:.3%;
   background-color:#000D08;
-  width:fill;
+  width:stretch;
   color:#FFFF;
   font-family: Avenir;
   font-size: 160%;
   font-weight: 900;
   line-height: 165%;
   opacity:85%;
-  position:fixed;
+  position:relative;
   .login{
     float:right;
     margin-top:.3%;
