@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {Input, FormGroup, Label, Button, Modal, ModalHeader, ModalBody, ModalFooter, Form} from 'reactstrap';
+import {Input, FormGroup, Label, Button, Modal, ModalHeader, ModalBody, Form} from 'reactstrap';
 import "./LoginModal.scss";
+import axios from 'axios';
+
 export default class LoginModal extends Component{
   constructor(props){
     super(props);
@@ -11,43 +13,42 @@ export default class LoginModal extends Component{
     }
   }
 
-  getUser=(e)=>{
+  postUser=(e)=>{
     e.preventDefault();
     const user={
       email: this.state.email,
       password:this.state.password,
     };
-   /* Axios.post('http://localhost:8000',{user}) //replacing axios -- DONT FORGET
-    .then(res=>{
-      //remove log later
-      console.log(res);
-      console.log(res.data);
-    })*/
+
+    axios.post('http://localhost:3000', {user})
+    .then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+    });
   }
 
-  handleChange = (e)=>{
+  handleSubmit = (e) =>{
+    e.preventDefault();
     this.setState({email:e.target.elements.email.value});
     this.setState({password:e.target.elements.password.value});
     this.setState({isSent:true});
-    e.preventDefault();
+    this.postUser(e);
+    e.target.reset();
   }
 
   render() {
-      //MAKE SURE TO REMOVE MODALFOOTER
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="loginModal">
       <ModalHeader>
-      <Button onClick={this.props.toggle}
-      close aria-label="Cancel"
-      size="sm"
-      className="close">
-      x
-      </Button>
+      <Button  close onClick={this.props.toggle}
+      className="closeRight"
+      aria-label="Cancel"/>
       Login
       </ModalHeader>
       <ModalBody>
 
-      <Form onSubmit={this.handleChange}>
+      <Form onSubmit={this.handleSubmit}>
         <FormGroup controlId="formControlsText">
           <Label>Email:</Label>
           <br/>
@@ -65,10 +66,6 @@ export default class LoginModal extends Component{
       </Button>
       </Form>
       </ModalBody>
-      <ModalFooter>
-      <p> Your email is: {this.state.email}</p> {/*remove later - testing only*/}
-      <p> Your password is: {this.state.password}</p>
-      </ModalFooter>
       </Modal>
     );
   }
