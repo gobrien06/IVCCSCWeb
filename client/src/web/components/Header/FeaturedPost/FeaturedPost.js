@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Card, CardBody, CardTitle, CardImg, Row, Col, Button} from 'reactstrap';
+import {Card, CardBody, CardTitle, CardImg, Row, Col} from 'reactstrap';
 import './FeaturedPost.scss';
+import ReadMore from '../../ReadMore/ReadMore';
 import axios from 'axios';
 
 export default class FeaturedPost extends Component{
@@ -39,10 +40,6 @@ export default class FeaturedPost extends Component{
     this.getData();
   }
 
-  toFull(){
-    //takes user to full post
-  }
-
   render(){
     return(
       <div className="contain">
@@ -61,7 +58,7 @@ export default class FeaturedPost extends Component{
             </Col>
             <Col md = "10" xs="8" sm="8">
               <p className="previewtext">{this.state.previewText}</p>
-              <Button className ="read" color="primary" onClick={this.toFull}>Read more</Button>
+              <ReadMore />
            </Col>
           </Row>
         </CardBody>
