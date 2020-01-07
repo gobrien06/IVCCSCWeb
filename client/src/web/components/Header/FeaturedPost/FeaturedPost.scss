@@ -1,0 +1,47 @@
+.contain{
+  position:absolute;
+  width:50%;
+  top: 50%;
+  max-height:300px;
+  -webkit-transform: translate(50%,-50%);
+  -ms-transform: translate(50%,-50%);
+  transform: translate(50%,-50%);
+  overflow:scroll;
+}
+
+.card{
+  overflow:scroll;
+}
+
+p{
+  font-family:Avenir;
+}
+
+.title{
+  font-family: Avenir;
+  font-size: 130%;
+  font-weight:500;
+}
+
+.icon{
+  position:relative;
+  width:64px;
+  height:64px;
+  float:left;
+}
+
+.date{
+  position:relative;
+  float:left;
+}
+
+.read{
+  position:relative;
+  top:3%;
+  right:3%;
+  float:right;
+  width:28%;
+}
+
+
+//need to implement mobile supports

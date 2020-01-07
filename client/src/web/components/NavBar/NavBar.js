@@ -16,10 +16,9 @@ export default class NavBar extends Component{
    render(){
      return(
        <div class="navBar">
-        blogBase
+        IVC CSC
          <Button
          outline color="primary"
-         size="sm"
          onClick={()=>{
           this.toggle()
          }}
