@@ -1,12 +1,13 @@
-import React from 'react';
-import {Row, Col, Card, CardBody, } from 'reactstrap';
+import React, {Fragment} from 'react';
+import {Row, Col} from 'reactstrap';
 import "./Footer.scss";
 
 
 export default function Footer(){
   return(
+    <Fragment>
     <Row className="containfoot">
-    <p class="leftheader">Be heard.</p>
+      <p className="leftheader">Be heard.</p>
       <Col md="3">
       </Col>
       <Col md="3">
@@ -16,5 +17,6 @@ export default function Footer(){
       <Col md="3">
       </Col>
     </Row>
+    </Fragment>
   );
 }
