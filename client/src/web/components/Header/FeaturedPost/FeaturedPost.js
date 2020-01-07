@@ -46,7 +46,7 @@ export default class FeaturedPost extends Component{
   render(){
     return(
       <div class="contain">
-      <Card class="card">
+      <Card className="card">
         <CardImg />
         <CardBody>
           <CardTitle className = "title" text="">
@@ -60,7 +60,7 @@ export default class FeaturedPost extends Component{
               {this.state.date}</p>
             </Col>
             <Col md = "10" xs="8" sm="8">
-              <p>{this.state.previewText}</p>
+              <p class="previewtext">{this.state.previewText}</p>
               <Button className ="read" color="primary" onClick={this.toFull}>Read more</Button>
            </Col>
           </Row>
