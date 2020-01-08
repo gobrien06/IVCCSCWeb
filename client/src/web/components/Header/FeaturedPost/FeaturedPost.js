@@ -11,7 +11,7 @@ export default class FeaturedPost extends Component{
       articleTitle:"Article Title",
       previewText:
       "Lorem ipsum dolor sit amet, nec timeam docendi placerat ea, amet sententiae theophrastus ex ... Usu ad etiam clita nominati, pri putant iracundia ea. Te mei erat dicat aperiam, cum an euismod forensibus, nec an odio elit intellegebat. ... Et usu fierent detracto perfecto, ea odio volutpat splendide pri, solum forensibus est ei.",
-      icon:"https://i.redd.it/ppj1rpi1tuc31.jpg",
+      icon:"https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Irvine_Valley_College_seal.svg/1200px-Irvine_Valley_College_seal.svg.png",
       author:"Author Name",
       date:"MM/DD/YY"
     }
@@ -53,7 +53,7 @@ export default class FeaturedPost extends Component{
             <Col md = "2" xs="4" sm="4" className = "side">
               <img className="icon" src={this.state.icon} alt="Icon" />
               <p className ="date">
-              ___________ <br />
+              __________ <br />
               {this.state.date}</p>
             </Col>
             <Col md = "10" xs="8" sm="8">
