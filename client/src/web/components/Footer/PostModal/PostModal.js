@@ -24,14 +24,14 @@ export default class PostModal extends Component{
 
   postPost=(e)=>{
     e.preventDefault();
-    const post={
+    const userPost={
       title: this.state.title,
       posttext:this.state.posttext,
       date:this.state.date,
       userID: this.state.userID,
     };
 
-    axios.post('http://localhost:3000', {post})
+    axios.post('http://localhost:3000', {userPost})
     .then((response) => {
       console.log(response);
     }, (error) => {
