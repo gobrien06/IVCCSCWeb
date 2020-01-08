@@ -9,9 +9,9 @@ export default class NavBar extends Component{
        isModalOpen:false,
      }
  }
+  //need to be able to check login status across multiple components
  toggle=()=>{
    this.setState({isModalOpen:!this.state.isModalOpen})
-   console.log("Modal state changed!");
  }
    render(){
      return(

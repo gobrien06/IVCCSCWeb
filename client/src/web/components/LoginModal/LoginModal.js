@@ -49,7 +49,7 @@ export default class LoginModal extends Component{
       <ModalBody>
 
       <Form onSubmit={this.handleSubmit}>
-        <FormGroup controlId="formControlsText">
+        <FormGroup>
           <Label>Email:</Label>
           <br/>
           <Input type="text" placeholder="Enter email" name="email"/>
@@ -59,6 +59,7 @@ export default class LoginModal extends Component{
          <Input type="text" placeholder="Enter password" name="password"/>
       </FormGroup>
       <br/>
+      <p className="signup"> Not a member? <u>Sign up here.</u> </p>
       <Button type="submit"
       color="primary"
       className="submit">
