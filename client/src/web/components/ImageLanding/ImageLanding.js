@@ -12,7 +12,7 @@ export default function ImageLanding(){
       </Col>
       <Col lg="4">
         <iframe title="discord" className="discordwidget" src="https://discordapp.com/widget?id=465243359812780053&theme=dark"
-        width="400" height="400" allowtransparency="true" frameborder="0">
+        width="400" height="400" allowtransparency="true" frameBorder="0">
         </iframe>
       </Col>
     </Row>

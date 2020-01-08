@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import {Input, FormGroup, Label, Button, Modal, ModalHeader, ModalBody, Form} from 'reactstrap';
-import "./LoginModal.scss";
-import SignUpModal from '../SignUpModal/SignUpModal';
+import "./SignUpModal.scss";
 import axios from 'axios';
 
-export default class LoginModal extends Component{
+//copied loginmodal placeholder
+export default class SignUpModal extends Component{
   constructor(props){
     super(props);
     this.state={
       email:'',
       password:'',
       response:'',
-      signUpOpen:''
     }
   }
 
@@ -39,10 +38,7 @@ export default class LoginModal extends Component{
     e.target.reset();
   }
 
-  toggle = () =>{
-    this.setState({signUpOpen:!this.state.signUpOpen});
-  }
-
+  //need to consider email confirmations?
   render() {
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="loginModal">
@@ -50,7 +46,7 @@ export default class LoginModal extends Component{
       <Button  close onClick={this.props.toggle}
       className="closeRight"
       aria-label="Cancel"/>
-      Login
+      Sign Up
       </ModalHeader>
       <ModalBody>
 
@@ -65,9 +61,7 @@ export default class LoginModal extends Component{
          <Input type="text" placeholder="Enter password" name="password"/>
       </FormGroup>
       <br/>
-      <p className="signup" color="primary">{this.state.response}</p>
-      <p className="signup"> Not a member? <u onClick={this.toggle}>Sign up here.</u> </p>
-      <SignUpModal isOpen={this.state.signUpOpen} toggle={this.toggle} />
+      <p className="signup">{this.state.response}</p>
       <Button type="submit"
       color="primary"
       className="submit">
