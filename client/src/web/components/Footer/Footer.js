@@ -12,17 +12,15 @@ export default class Footer extends Component{
     this.state={
       isLoginModalOpen:false,
       isPostModalOpen:false,
-      isLoggedIn:false,
+      isLoggedIn:true,
     }
   }
 
-  getLoginStatus=()=>{
-    //need to be able to check login status across multiple components
-  }
-
   toggle=()=>{
-    this.getLoginStatus();
-    this.setState({isPostModalOpen:!this.state.isPostModalOpen})
+    if(this.state.isLoggedIn)
+      this.setState({isPostModalOpen:!this.state.isPostModalOpen});
+    else
+      this.setState({isLoginModalOpen:!this.state.isLoginModalOpen});
   }
 
   render(){

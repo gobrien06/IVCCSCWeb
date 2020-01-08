@@ -23,7 +23,7 @@ export default class FeaturedPost extends Component{
       (response) =>
       {
         this.setState({
-          articleTitle: this.response.icon,
+          articleTitle: this.response.title,
           previewText: this.response.previewText,
           icon: this.response.icon,
           author: this.response.author,
