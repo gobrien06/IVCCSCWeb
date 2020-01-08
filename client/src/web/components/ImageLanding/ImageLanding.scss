@@ -1,9 +1,10 @@
 .landing{
   position:relative;
   height:450px;
-  background-image:url("https://i.imgur.com/fX5p74Z.jpg");
+  background-image:linear-gradient(to bottom,#0069F6,#0056EB);
   background-size:cover;
-  padding:7%;
+  padding:3%;
+  overflow:hidden;
 }
 
 .landing p{
@@ -11,4 +12,18 @@
   color:#FFF;
 }
 
+.leftimageheader{
+  font-size:190%;
+  font-weight:500;
+}
 
+.leftimagepara{
+  position:relative;
+  font-size:120%;
+  font-weight:400;
+}
+
+.discordwidget{
+  position:relative;
+  float:right;
+}

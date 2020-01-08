@@ -28,7 +28,7 @@ export default class PostModal extends Component{
       title: this.state.title,
       posttext:this.state.posttext,
       date:this.state.date,
-      author: this.state.userID,
+      userID: this.state.userID,
     };
 
     axios.post('http://localhost:3000', {post})
