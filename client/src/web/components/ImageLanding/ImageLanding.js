@@ -6,7 +6,7 @@ export default function ImageLanding(){
   return(
     <Row className="landing">
       <Col lg="8">
-        <p className="leftimageheader">Reaching the vast opportunities of Irvine, one club at a time.</p>
+        <p className="leftimageheader">Where it happens.</p>
         <p className="leftimagepara">Join us at room <b>B300</b> for our biweekly Friday meets, or stop by our Discord to talk!</p>
       </Col>
       <Col lg="4">

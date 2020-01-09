@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Input, FormGroup, Label, Button, Modal, ModalHeader, ModalBody, Form} from 'reactstrap';
-import "./SignUpModal.scss";
+//import "./SignUpModal.scss";
 import axios from 'axios';
 
 //copied loginmodal placeholder
@@ -21,7 +21,7 @@ export default class SignUpModal extends Component{
       password:this.state.password,
     };
 
-    axios.post('http://localhost:3000', {user})
+    axios.post('http://localhost:3000/user', {user})
     .then((response) => {
       console.log(response);
       this.setState({response:response});
@@ -46,7 +46,7 @@ export default class SignUpModal extends Component{
       <Button  close onClick={this.props.toggle}
       className="closeRight"
       aria-label="Cancel"/>
-      Sign Up
+      Sign Up for Our Newsletter
       </ModalHeader>
       <ModalBody>
 

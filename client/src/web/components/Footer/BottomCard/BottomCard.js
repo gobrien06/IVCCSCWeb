@@ -14,12 +14,11 @@ export default class BottomCard extends Component{
       author:"Author Name",
       date:"MM/DD/YY"
     }
-    this.sendID();
     this.getData();
   }
 
   getData(){
-    axios.get('http://localhost:3000/')
+    axios.get('http://localhost:3000/posts')
     .then(
       (response) =>
       {
@@ -36,17 +35,6 @@ export default class BottomCard extends Component{
     });
   }
 
-  //postID is passed down through props
-  sendID(){
-    let ID = this.props.postID;
-    axios.post('http://localhost:3000/',ID)
-    .then((response) => {
-      console.log(response);
-    }, (error) => {
-      console.log(error);
-    });
-  }
-
   render(){
     return(
       <div>
@@ -54,7 +42,8 @@ export default class BottomCard extends Component{
           <CardBody>
             <CardTitle>{this.state.articleTitle}</CardTitle>
             <CardSubtitle>{this.state.date}</CardSubtitle>
-            <CardText>{this.state.previewText}</CardText>
+            <br/>
+            <CardText className="text">{this.state.previewText}</CardText>
             <ReadMore />
           </CardBody>
         </Card>
