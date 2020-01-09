@@ -7,7 +7,7 @@ export default function MissionLanding(){
     <Row className="mission">
       <Col md="6" >
         <p className="leftheader">Imagine. Design. <br/>Create. Discover.</p>
-        <p className="divider">_____________________________________</p>
+        <p className="divider">____________________________________________</p>
         <p className="leftpara">Support the untapped potential of community colleges through projects and pioneering.
         Communicate, collaborate, and produce results.</p>
       </Col>

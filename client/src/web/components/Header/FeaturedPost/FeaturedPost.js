@@ -53,7 +53,7 @@ export default class FeaturedPost extends Component{
             <Col md = "2" xs="4" sm="4" className = "side">
               <img className="icon" src={this.state.icon} alt="Icon" />
               <p className ="date">
-              __________ <br />
+              ___________ <br />
               {this.state.date}</p>
             </Col>
             <Col md = "10" xs="8" sm="8">
