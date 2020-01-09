@@ -17,7 +17,7 @@ export default class FeaturedPost extends Component{
     }
   }
 
-  getData(){
+  /*getData(){
     axios.get('http://localhost:3000/')
     .then(
       (response) =>
@@ -34,10 +34,10 @@ export default class FeaturedPost extends Component{
         console.log(error);
       });
     });
-  }
+  }*/
 
   componentDidMount(){
-    this.getData();
+    //this.getData();
   }
 
   render(){
