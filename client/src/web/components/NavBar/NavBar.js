@@ -18,6 +18,7 @@ export default class NavBar extends Component{
    render(){
       return(
         <div className="navBar">
+        <img className="navIcon" src="https://i.imgur.com/gfhSCkm.png" alt="icon" />
          IVC CSC
           <Button
           outline color="primary"
