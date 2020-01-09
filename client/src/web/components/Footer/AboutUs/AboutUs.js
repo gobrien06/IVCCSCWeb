@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import './AboutUs.css';
 
 export default class AboutUs extends Component{
   render(){
@@ -27,7 +28,7 @@ export default class AboutUs extends Component{
       </ModalBody>
       <ModalFooter>
       <p className="fullText">
-      Website created by Roth Vann and Gabrielle O'Brien. Contact the creators at: idunno@ivc.edu.
+      Website created by Roth Vann and Gabrielle O'Brien.
       </p>
       </ModalFooter>
       </Modal>
