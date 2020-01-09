@@ -1,1 +1,39 @@
-//going to be a modal with description and contact info
+import React, { Component } from 'react';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+
+//need admin/user permissions to edit or delete post
+export default class AboutUs extends Component{
+
+  //share button for emails? like button? additional functionality like replies?
+  render(){
+    return(
+      <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="postreader" size="lg">
+      <ModalHeader>
+        <Button  close onClick={this.props.toggle}
+        className="closeRight"
+        aria-label="Cancel"/>
+        About Us
+      </ModalHeader>
+      <ModalBody>
+      <ul className="fullText">
+          <li> <b>Who are we? </b> </li>
+          We are a club based around computer science at Irvine Valley College. Our mission is to provide more opportunities within
+          computer science to local students. Our meetings comprise of lectures with real-world engineers and projects for groups, ranging
+          from a variety of topics. For more information join our Discord or contact us at:.
+          <br/> <br/>
+          <li>
+          <b> Who can join? </b> </li>
+          Anyone who is an Irvine Valley College student can attend our meetings, and everyone is welcome to attend our events (such as the
+          Irvine Valley College Hackathon).
+          <br/>
+          </ul>
+      </ModalBody>
+      <ModalFooter>
+      <p className="fullText">
+      Website created by Roth Vann and Gabrielle O'Brien. Contact the creators at: idunno@ivc.edu.
+      </p>
+      </ModalFooter>
+      </Modal>
+    );
+  }
+}

@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {Row, Col, Button} from 'reactstrap';
 import "./Footer.scss";
+import AboutUs from './AboutUs/AboutUs';
 import PostModal from './PostModal/PostModal';
 import LoginModal from '../LoginModal/LoginModal';
 import RowList from './BottomCard/RowList/RowList';
@@ -11,6 +12,7 @@ export default class Footer extends Component{
   constructor(props){
     super(props);
     this.state={
+      aboutUsOpen:false,
       isLoginModalOpen:false,
       isPostModalOpen:false,
       isLoggedIn:true,
@@ -37,6 +39,9 @@ export default class Footer extends Component{
       this.setState({isLoginModalOpen:!this.state.isLoginModalOpen});
   }
 
+  aboutToggle=()=>{
+    this.setState({aboutUsOpen:!this.state.aboutUsOpen});
+  }
 
   render(){
       return(
@@ -55,8 +60,10 @@ export default class Footer extends Component{
           <Col md="3">
           </Col>
           <Col md="9">
-            <p className="contact"> ____________________________________________________
-            <br/>About Us</p>
+            <AboutUs isOpen={this.state.aboutUsOpen} toggle={this.aboutToggle}/>
+            <p className="contact" onClick={this.aboutToggle}> ____________________________________________________
+            <br/>About Us
+            </p>
           </Col>
         </Row>
       </div>
