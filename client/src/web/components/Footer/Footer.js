@@ -52,7 +52,7 @@ export default class Footer extends Component{
         <LoginModal isOpen={this.state.isLoginModalOpen} toggle={this.toggle}/>
           <Col md="3">
             <p className="leftheader">Be heard.</p>
-
+            <img className="animation" src="https://i.pinimg.com/originals/3e/75/b5/3e75b528fcdc9da4f74d78b23167b4bd.gif" alt="animation"/>
           </Col>
           <ColList numPosts={this.state.numPosts} rowCount={1}/>
         </Row>
