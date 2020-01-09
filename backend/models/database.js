@@ -1,7 +1,7 @@
 
-var env = app.get('env');
+var env = process.env.NODE_ENV || 'development';
 var knex_config = require('../config/knex-config');
-var knex = require('knex')(knex_config[env])
+var knex = require('knex')(knex_config[env]);
 
 knex.schema.hasTable('users').then(exists => {
     if (!exists) {
