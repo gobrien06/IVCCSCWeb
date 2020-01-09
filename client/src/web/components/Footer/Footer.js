@@ -16,7 +16,7 @@ export default class Footer extends Component{
       isLoginModalOpen:false,
       isPostModalOpen:false,
       isLoggedIn:true,
-      numPosts:10,
+      numPosts:5,
     }
     this.getNumPosts();
   }
