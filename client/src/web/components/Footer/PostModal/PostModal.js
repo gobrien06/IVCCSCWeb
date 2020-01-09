@@ -9,7 +9,6 @@ export default class PostModal extends Component{
       title:'',
       posttext:'',
       date:'',
-      userID:'', //need to assign userID values to users
     }
   }
 
@@ -28,7 +27,6 @@ export default class PostModal extends Component{
       title: this.state.title,
       posttext:this.state.posttext,
       date:this.state.date,
-      userID: this.state.userID,
     };
 
     axios.post('http://localhost:3000', {userPost})
