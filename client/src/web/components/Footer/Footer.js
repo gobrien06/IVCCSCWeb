@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Row, Col, Button} from 'reactstrap';
+import {Row, Col} from 'reactstrap';
 import "./Footer.scss";
 import AboutUs from './AboutUs/AboutUs';
 import PostModal from './PostModal/PostModal';
@@ -14,9 +14,9 @@ export default class Footer extends Component{
     this.state={
       aboutUsOpen:false,
       isLoginModalOpen:false,
-      isPostModalOpen:false,
+      //isPostModalOpen:false,
       isLoggedIn:true,
-      numPosts:10,
+      numPosts:5,
     }
     this.getNumPosts();
   }
@@ -43,6 +43,7 @@ export default class Footer extends Component{
     this.setState({aboutUsOpen:!this.state.aboutUsOpen});
   }
 
+  //<Button outline color="primary" className="post" onClick={this.toggle}> Start Talking </Button>
   render(){
       return(
       <div className="containfoot">
@@ -51,7 +52,7 @@ export default class Footer extends Component{
         <LoginModal isOpen={this.state.isLoginModalOpen} toggle={this.toggle}/>
           <Col md="3">
             <p className="leftheader">Be heard.</p>
-            <Button outline color="primary" className="post" onClick={this.toggle}> Start Talking </Button>
+
           </Col>
           <ColList numPosts={this.state.numPosts} rowCount={1}/>
         </Row>
