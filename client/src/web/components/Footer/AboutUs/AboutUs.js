@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 
-//need admin/user permissions to edit or delete post
 export default class AboutUs extends Component{
-
-  //share button for emails? like button? additional functionality like replies?
   render(){
     return(
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="postreader" size="lg">
@@ -19,7 +16,7 @@ export default class AboutUs extends Component{
           <li> <b>Who are we? </b> </li>
           We are a club based around computer science at Irvine Valley College. Our mission is to provide more opportunities within
           computer science to local students. Our meetings comprise of lectures with real-world engineers and projects for groups, ranging
-          from a variety of topics. For more information join our Discord or contact us at:.
+          from a variety of topics. For more information join our Discord or contact us at: ivccsc@gmail.com.
           <br/> <br/>
           <li>
           <b> Who can join? </b> </li>
