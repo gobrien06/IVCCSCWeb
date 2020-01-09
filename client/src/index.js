@@ -3,9 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
+import Footer from './web/components/Footer/Footer';
+import NotFound from './web/components/NotFound/NotFound';
 import * as serviceWorker from './serviceWorker';
+import {Route, Switch, BrowserRouter} from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <BrowserRouter>
+    <Switch>
+    <Route exact path="/" component={App} />
+    <Route path="/posts" component={Footer} />
+    <Route component={NotFound} />
+    </Switch>
+  </BrowserRouter>,
+   document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
