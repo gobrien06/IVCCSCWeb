@@ -8,10 +8,6 @@
   transform: translate(50%,-50%);
 }
 
-.card{
-  overflow:scroll;
-}
-
 p{
   font-family:Avenir;
 }
@@ -42,7 +38,6 @@ p{
 
 .previewtext{
   max-height:200px;
-  overflow:scroll;
 }
 
 @media only screen and (max-width:650px){
@@ -58,7 +53,6 @@ p{
 
   .card{
     max-height:250px;
-    overflow:scroll;
   }
 
   p{
