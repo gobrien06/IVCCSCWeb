@@ -18,10 +18,9 @@ export default class SignUpModal extends Component{
     e.preventDefault();
     const user={
       email: this.state.email,
-      password:this.state.password,
     };
 
-    axios.post('http://localhost:3000/user', {user})
+    axios.post('http://localhost:3000/emails/insert', {user})
     .then((response) => {
       console.log(response);
       this.setState({response:response});
@@ -33,7 +32,6 @@ export default class SignUpModal extends Component{
   handleSubmit = (e) =>{
     e.preventDefault();
     this.setState({email:e.target.elements.email.value});
-    this.setState({password:e.target.elements.password.value});
     this.postUser(e);
     e.target.reset();
   }
@@ -56,12 +54,7 @@ export default class SignUpModal extends Component{
           <br/>
           <Input type="text" placeholder="Enter email" name="email"/>
           <br/>
-          <Label>Password:</Label>
-          <br/>
-         <Input type="text" placeholder="Enter password" name="password"/>
       </FormGroup>
-      <br/>
-      <p className="signup">{this.state.response}</p>
       <Button type="submit"
       color="primary"
       className="submit">
