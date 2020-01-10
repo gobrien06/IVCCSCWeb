@@ -16,11 +16,9 @@ export default class SignUpModal extends Component{
 
   postUser=(e)=>{
     e.preventDefault();
-    const user={
-      email: this.state.email,
-    };
+    const email = this.state.email;
 
-    axios.post('http://localhost:3000/emails/insert', {user})
+    axios.post('http://localhost:3000/emails/insert', {email})
     .then((response) => {
       console.log(response);
       this.setState({response:response});
