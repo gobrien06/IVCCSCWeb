@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import {Input, FormGroup, Label, Button, Modal, ModalHeader, ModalBody, Form} from 'reactstrap';
-import "./LoginModal.scss";
-import SignUpModal from '../SignUpModal/SignUpModal';
+//import "./SignUpModal.scss";
 import axios from 'axios';
 
-export default class LoginModal extends Component{
+//copied loginmodal placeholder
+export default class SignUpModal extends Component{
   constructor(props){
     super(props);
     this.state={
       email:'',
       password:'',
       response:'',
-      signUpOpen:''
     }
   }
 
@@ -19,10 +18,9 @@ export default class LoginModal extends Component{
     e.preventDefault();
     const user={
       email: this.state.email,
-      password:this.state.password,
     };
 
-    axios.post('http://localhost:3000', {user})
+    axios.post('http://localhost:3000/emails/insert', {user})
     .then((response) => {
       console.log(response);
       this.setState({response:response});
@@ -34,15 +32,11 @@ export default class LoginModal extends Component{
   handleSubmit = (e) =>{
     e.preventDefault();
     this.setState({email:e.target.elements.email.value});
-    this.setState({password:e.target.elements.password.value});
     this.postUser(e);
     e.target.reset();
   }
 
-  toggle = () =>{
-    this.setState({signUpOpen:!this.state.signUpOpen});
-  }
-
+  //need to consider email confirmations?
   render() {
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="loginModal">
@@ -50,7 +44,7 @@ export default class LoginModal extends Component{
       <Button  close onClick={this.props.toggle}
       className="closeRight"
       aria-label="Cancel"/>
-      Login
+      Sign Up for Our Newsletter
       </ModalHeader>
       <ModalBody>
 
@@ -60,14 +54,7 @@ export default class LoginModal extends Component{
           <br/>
           <Input type="text" placeholder="Enter email" name="email"/>
           <br/>
-          <Label>Password:</Label>
-          <br/>
-         <Input type="text" placeholder="Enter password" name="password"/>
       </FormGroup>
-      <br/>
-      <p className="signup" color="primary">{this.state.response}</p>
-      <p className="signup"> Not a member? <u onClick={this.toggle}>Sign up here.</u> </p>
-      <SignUpModal isOpen={this.state.signUpOpen} toggle={this.toggle} />
       <Button type="submit"
       color="primary"
       className="submit">

@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import FeaturedCard from "./FeaturedCard/FeaturedCard.js";
+import React from 'react';
+import FeaturedPost from "./FeaturedPost/FeaturedPost.js";
 import SlideShow from "./SlideShow/SlideShow.js";
 import './Header.css';
 
-export default class Header extends Component{
-  render(){
+export default function Header(){
     return(
-      <div class = "header">
+      <div className = "header">
       <SlideShow />
+      <FeaturedPost />
       </div>
     );
-    }
 }
+

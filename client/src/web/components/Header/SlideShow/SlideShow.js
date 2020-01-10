@@ -19,11 +19,14 @@ export default class SlideShow extends Component {
     super(props);
 
     this.state = {
-      index: 0
-     };
+      activeIndex: 0,
+      setActiveIndex:0,
+      animating:false,
+      setAnimating:false,
+    };
 
-    this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
+    this.next = this.next.bind(this);
     this.goTo = this.goTo.bind(this);
     this.onExiting = this.onExiting.bind(this);
     this.onExited = this.onExited.bind(this);
@@ -31,33 +34,35 @@ export default class SlideShow extends Component {
 
   onExited() {
     this.animating = false;
+    this.setAnimating = true;
   }
 
   onExiting() {
     this.animating = true;
+    this.setAnimating = false;
   }
 
   next() {
     if (this.animating)
       return;
-    const nextIndex = this.state.index === items.length - 1 ? 0 : this.state.index + 1;
-    this.setState({ index: nextIndex });
+    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+    this.setState({ activeIndex: nextIndex });
   }
 
   previous() {
     if (this.animating)
       return;
-    const nextIndex = this.state.index === 0 ? items.length - 1 : this.state.index - 1;
-    this.setState({ index: nextIndex });
+    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+    this.setState({ activeIndex: nextIndex });
   }
 
   goTo(newIndex) {
     if (this.animating) return;
-    this.setState({ index: newIndex });
+    this.setState({ activeIndex: newIndex });
   }
 
+
   render() {
-    const { index } = this.state;
 
     const slides = items.map((item) => {
       return (
@@ -74,11 +79,11 @@ export default class SlideShow extends Component {
     return (
       <Carousel
         className = "slideShow"
-        activeIndex={index}
+        activeIndex={this.state.activeIndex}
         next={this.next}
         previous={this.previous}
       >
-        <CarouselIndicators items={items} index={index} onClickHandler={this.goTo} />
+        <CarouselIndicators items={items} activeIndex={this.state.activeIndex} onClickHandler={this.goTo} />
         {slides}
 
       </Carousel>

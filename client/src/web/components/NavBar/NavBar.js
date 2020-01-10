@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import LoginModal from '../LoginModal/LoginModal';
 import {Button} from 'reactstrap';
 import './NavBar.scss';
+import SignUpModal from '../SignUpModal/SignUpModal.js';
+
 export default class NavBar extends Component{
  constructor(props){
    super(props);
@@ -9,27 +10,26 @@ export default class NavBar extends Component{
        isModalOpen:false,
      }
  }
+
  toggle=()=>{
-   this.setState({isModalOpen:!this.state.isModalOpen})
-   console.log("Modal state changed!");
+   this.setState({isModalOpen:!this.state.isModalOpen});
  }
+
    render(){
-     return(
-       <div class="navBar">
-        blogBase
-         <Button
-         outline color="primary"
-         size="sm"
-         onClick={()=>{
-          this.toggle()
-         }}
-         className="login">
-         Login
-         </Button>
-         <LoginModal isOpen={this.state.isModalOpen} toggle={this.toggle}/>
-       </div>
-     )
-   }
+      return(
+        <div className="navBar">
+        <img className="navIcon" src="https://i.imgur.com/gfhSCkm.png" alt="icon" />
+         IVC CSC
+          <Button
+          outline color="primary"
+          onClick={this.toggle}
+          className="login" isOpen={!this.isLoggedIn}>
+          Sign Up
+          </Button>
+          <SignUpModal isOpen={this.state.isModalOpen} toggle={this.toggle}/>
+        </div>
+      );
+     }
 }
 
 

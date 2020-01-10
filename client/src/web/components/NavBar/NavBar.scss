@@ -1,18 +1,36 @@
 .navBar{
-  padding-left:.3%;
+  padding-left:.7%;
+  padding-right:.7%;
   background-color:#000D08;
   width:stretch;
   color:#FFFF;
-  font-family: Avenir;
-  font-size: 160%;
-  font-weight: 900;
-  line-height: 165%;
-  opacity:85%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 200%;
+  font-weight:800;
   position:relative;
+  height:52px;
+}
+
+.login{
+  float:right;
+  margin-top:.6%;
+  width:15%;
+  font-size:15px;
+}
+
+.navIcon{
+  height:40px;
+  width:40px;
+  margin-right:.6%;
+  margin-bottom:.3%;
+}
+
+@media only screen and (max-width: 900px) {
   .login{
     float:right;
-    margin-top:.3%;
-    margin-bottom:.3%;
-    margin-right:.5%
+    margin-top:1.5%;
+    width:25%;
+    font-size:15px;
   }
 }
+
