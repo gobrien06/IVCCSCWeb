@@ -1,6 +1,6 @@
-var api = require('./api');
+var emails = require('./emails');
 var router = require('express').Router();
 
-router.use('/api', api);
+router.use('/emails', emails);
 
 module.exports = router;
