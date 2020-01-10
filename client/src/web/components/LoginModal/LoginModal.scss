@@ -3,7 +3,9 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-.close{
-  float:right;
+.closeRight{
+  position:absolute;
+  top:3%;
+  right:3%;
+  font-size:30px;
 }
