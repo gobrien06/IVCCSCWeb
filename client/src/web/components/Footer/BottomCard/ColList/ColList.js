@@ -31,11 +31,13 @@ getData(){
     (response) =>
     {
       this.setState({
-        content: this.response.content,
-        author: this.response.author,
-        date: this.response.date,
-        success: this.response.success,
-        icon: this.response.avatar,
+        card:{
+          content: this.response.content,
+          author: this.response.author,
+          date: this.response.date,
+          success: this.response.success,
+          icon: this.response.avatar,
+        }
       },
     (error) =>
     {
