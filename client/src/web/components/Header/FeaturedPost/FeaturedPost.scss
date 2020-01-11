@@ -40,6 +40,7 @@ p{
 
 .previewtext{
   max-height:200px;
+  overflow:hidden;
 }
 
 @media only screen and (max-width:650px){
@@ -65,7 +66,6 @@ p{
 
   .previewtext{
     max-height:100px;
-    overflow:scroll;
   }
 
 }
