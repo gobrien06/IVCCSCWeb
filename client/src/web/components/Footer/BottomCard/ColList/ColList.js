@@ -7,7 +7,6 @@ export default class ColList extends Component{
 constructor(props){
   super(props);
   this.state={
-    cardList:[],
     card:{
       content:"gdfgdfgfdsg",
       author: "dfjhg gdfhg",
@@ -23,29 +22,30 @@ componentWillMount(){
 }
 
 getData(){
-  axios.post('/posts/getPosts')
+  axios.post('/posts/posts')
   .then(
     (response) =>
     {
-      console.log(response.data);
+      let cardList = [];
       for(let i=0;i<this.props.numPosts;i++){
-        this.state.cardList.push({
+        this.setState({
             content: response.data[i].content,
             author: response.data[i].author,
             date: response.data[i].date,
             success: response.data.success,
             icon: response.data[i].avatar,
           });
+        cardList.append([this.state.content,this.state.author,this.state.date,this.state.icon]);
     }
-        
-      console.log(this.state.cardList);
+    console.log(cardList);
+    return cardList;
     },
       (error) =>
       {
         console.log(error);
       }
   );
-  return cardList;
+
 }
 
 
