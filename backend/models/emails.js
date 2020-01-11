@@ -1,4 +1,4 @@
-var knex = require('./database');
+var knex = require('../../database/database');
 
 function addEmail(res, email) {
     knex('email_list').insert({user_email: email}).then(result => {
