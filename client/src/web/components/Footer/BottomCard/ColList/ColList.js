@@ -23,31 +23,29 @@ componentWillMount(){
 }
 
 getData(){
-  axios.post('/posts/posts')
+  axios.post('/posts/getPosts')
   .then(
     (response) =>
     {
-      console.log(response);
+      console.log(response.data);
       for(let i=0;i<this.props.numPosts;i++){
-        let x = toString(i);
-        this.setState({
-          card:{
-            content: this.response[x].content,
-            author: this.response[x].author,
-            date: this.response[x].date,
-            success: this.response[x].success,
-            icon: this.response[x].avatar,
-          }
-        },
+        this.state.cardList.push({
+            content: response.data[i].content,
+            author: response.data[i].author,
+            date: response.data[i].date,
+            success: response.data.success,
+            icon: response.data[i].avatar,
+          });
+    }
+        
+      console.log(this.state.cardList);
+    },
       (error) =>
       {
         console.log(error);
-      });
-
-      this.state.cardList.push(this.state.card);
       }
-
-  });
+  );
+  return cardList;
 }
 
 
@@ -56,7 +54,7 @@ showCards=()=>{
   let n=0;
   for(n; (n<(this.props.numPosts-((this.props.rowCount-1)*3)) && (n<3)) ;n++){
     colList.push(<Col md="3">
-    <BottomCard card={this.state.cardList[n]}/>
+    <BottomCard card={(this.getData())[n]}/>
     </Col>);
   }
   return colList;
