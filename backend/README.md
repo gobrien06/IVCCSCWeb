@@ -20,7 +20,7 @@ SET UP
 5. Create the tables by running
 ```
   CREATE TABLE email_list (user_email email PRIMARY KEY);  
-  CREATE TABLE posts (id bigint PRIMARY KEY, author text NOT NULL, avatar text NOT NULL, timestamp with time zone NOT NULL, content text NOT NULL);
+  CREATE TABLE posts (id bigint PRIMARY KEY, author text NOT NULL, avatar text NOT NULL, date timestamp with time zone NOT NULL, content text NOT NULL);
 ```
 6. Add an environment variable called POSTGRES_TEST_URL with the URL to the database
 ```
