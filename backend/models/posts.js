@@ -2,7 +2,7 @@ var knex = require('../../database/database');
 
 
 function getPosts(res) {
-    knex.select('*').from('posts').orderBy('date', 'desc').then(result => {
+    knex.select('*').from('posts').orderBy('date', 'desc').limit(40).then(result => {
         response = {success: true, length: result.length};
         let i = 0;
         for(row of result) {
