@@ -8,36 +8,38 @@ export default class FeaturedPost extends Component{
   constructor(props){
     super(props);
     this.state={
-      articleTitle:"Article Title",
-      previewText:
+      content:
       "Lorem ipsum dolor sit amet, nec timeam docendi placerat ea, amet sententiae theophrastus ex ... Usu ad etiam clita nominati, pri putant iracundia ea. Te mei erat dicat aperiam, cum an euismod forensibus, nec an odio elit intellegebat. ... Et usu fierent detracto perfecto, ea odio volutpat splendide pri, solum forensibus est ei.",
       icon:"https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Irvine_Valley_College_seal.svg/1200px-Irvine_Valley_College_seal.svg.png",
       author:"Author Name",
-      date:"MM/DD/YY"
+      date:"MM/DD/YY",
+      success:false,
     }
   }
 
-  /*getData(){
-    axios.get('http://localhost:3000/')
+  getData(){
+    axios.get('/posts/posts')
     .then(
       (response) =>
       {
         this.setState({
-          articleTitle: this.response.title,
-          previewText: this.response.previewText,
-          icon: this.response.icon,
+          //response[0]???
+          content: this.response.content,
           author: this.response.author,
+          icon: this.response.avatar,
           date: this.response.date,
+          success: this.response.success,
         },
       (error) =>
       {
+        console.log(this.state.success);
         console.log(error);
       });
     });
-  }*/
+  }
 
   componentDidMount(){
-    //this.getData();
+    this.getData();
   }
 
   render(){
@@ -47,7 +49,7 @@ export default class FeaturedPost extends Component{
         <CardImg />
         <CardBody>
           <CardTitle className = "title" text="">
-            {this.state.articleTitle}
+            {this.state.date}
           </CardTitle>
           <Row>
             <Col md = "2" xs="4" sm="4" className = "side">
@@ -57,8 +59,8 @@ export default class FeaturedPost extends Component{
               {this.state.date}</p>
             </Col>
             <Col md = "10" xs="8" sm="8">
-              <p className="previewtext">{this.state.previewText}</p>
-              <ReadMore />
+              <p className="previewtext">{this.state.content}</p>
+              <ReadMore content={this.state.content} author={this.state.author} icon={this.state.icon} date={this.state.date}/>
            </Col>
           </Row>
         </CardBody>
