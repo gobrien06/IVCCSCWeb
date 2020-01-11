@@ -23,11 +23,10 @@ export default class FeaturedPost extends Component{
       (response) =>
       {
         this.setState({
-          //response[0]???
-          content: this.response.content,
-          author: this.response.author,
-          icon: this.response.avatar,
-          date: this.response.date,
+          content: this.response['0'].content,
+          author: this.response['0'].author,
+          icon: this.response['0'].avatar,
+          date: this.response['0'].date,
           success: this.response.success,
         },
       (error) =>
