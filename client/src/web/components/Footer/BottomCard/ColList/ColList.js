@@ -30,6 +30,7 @@ getData(){
   .then(
     (response) =>
     {
+      console.log(response);
       this.setState({
         card:{
           content: this.response.content,

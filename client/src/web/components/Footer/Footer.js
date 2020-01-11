@@ -21,6 +21,7 @@ export default class Footer extends Component{
     this.getNumPosts();
   }
   getNumPosts=()=>{
+
     axios.get('/posts/posts')
     .then((response)=>{
       this.setState({numPosts:this.response.numPost});
@@ -29,6 +30,7 @@ export default class Footer extends Component{
       console.log(error);
     }
     )
+
   }
 
   toggle=()=>{
