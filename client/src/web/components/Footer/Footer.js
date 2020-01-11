@@ -21,10 +21,11 @@ export default class Footer extends Component{
     this.getNumPosts();
   }
 
+
   getNumPosts=()=>{
-    axios.get('/posts/posts')
+    axios.post('/posts/posts')
     .then((response)=>{
-      this.setState({numPosts:this.response.numPost});
+      this.setState({numPosts:this.response.length});
     },
     (error)=>{
       console.log(error);
