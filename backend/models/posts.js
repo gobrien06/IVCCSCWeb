@@ -1,0 +1,23 @@
+var knex = require('../../database/database');
+
+
+function getPosts(res) {
+    knex.select('*').from('posts').then(result => {
+        response = {success: true, length: result.length};
+        let i = 0;
+        for(row of result) {
+            response[i] = {
+                author: row['author'], 
+                avatar: row['avatar'], 
+                data: row['date'], 
+                content: row['content']
+            };
+            i++;
+        }
+        res.json(response);
+      }, result => {
+        res.json({success: false});
+    });
+}
+
+module.exports = {getPosts};
