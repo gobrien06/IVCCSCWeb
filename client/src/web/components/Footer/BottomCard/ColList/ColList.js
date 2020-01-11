@@ -16,6 +16,7 @@ constructor(props){
       icon: "",
     }
   }
+  this.initializeCards();
 }
 
 initializeCards(){
@@ -31,20 +32,23 @@ getData(){
     (response) =>
     {
       console.log(response);
-      this.setState({
-        card:{
-          content: this.response.content,
-          author: this.response.author,
-          date: this.response.date,
-          success: this.response.success,
-          icon: this.response.avatar,
-        }
-      },
-    (error) =>
-    {
-      console.log(this.state.success);
-      console.log(error);
-    });
+      for(let i=0;i<this.props.numPosts;i++){
+        let x = toString(i);
+        this.setState({
+          card:{
+            content: this.response[x].content,
+            author: this.response[x].author,
+            date: this.response[x].date,
+            success: this.response[x].success,
+            icon: this.response[x].avatar,
+          }
+        },
+      (error) =>
+      {
+        console.log(error);
+      });
+      }
+
   });
 }
 

@@ -20,8 +20,8 @@ export default class Footer extends Component{
     }
     this.getNumPosts();
   }
-  getNumPosts=()=>{
 
+  getNumPosts=()=>{
     axios.get('/posts/posts')
     .then((response)=>{
       this.setState({numPosts:this.response.numPost});
