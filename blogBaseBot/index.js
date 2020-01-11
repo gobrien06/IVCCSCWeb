@@ -19,9 +19,9 @@ client.login(process.env.EMMA);
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   for([id, guild] of client.guilds) {
-      console.log(guild.name);
       for([id, channel] of guild.channels) {
-            console.log(channel.name);
+        console.log(channel.name);
+        if(channel.name == "announcements") {
             if(channel.type == 'text') {
                 channel.fetchMessages({limit: 50}).then(messages => { 
                     for([id, message] of messages) {
@@ -29,12 +29,13 @@ client.on('ready', () => {
                     }
                 });
             }
+        }
       }
   }
 });
 
 client.on('message', (message) => {
-    if(message.channel.name === 'annoucements') {
+    if(message.channel.name === 'announcements') {
         //log
         addPost(message);
     }
