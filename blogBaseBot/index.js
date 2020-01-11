@@ -4,9 +4,10 @@ const knex = require('../database/database');
 
 
 function addPost(message) {
+    
     knex('posts').insert({
         id: message.id,
-        author: message['member'].nickname,
+        author: message['member'].nickname ? message['member'].nickname : message['author'].username,
         avatar: message['author'].displayAvatarURL,
         date: message.createdAt.toISOString(),        
         content: message.content
