@@ -18,9 +18,11 @@ export default class Footer extends Component{
       isLoggedIn:true,
       numPosts:20,
     }
-    this.getNumPosts();
   }
 
+  componentWillMount(){
+    this.getNumPosts();
+  }
 
   getNumPosts=()=>{
     axios.post('/posts/posts')

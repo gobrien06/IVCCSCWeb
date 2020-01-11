@@ -16,14 +16,10 @@ constructor(props){
       icon: "",
     }
   }
-  this.initializeCards();
 }
 
-initializeCards(){
-  for(let i=0;i<this.props.numPosts;i++){
-    this.getData();
-    this.state.cardList.push(this.state.card);
-  }
+componentWillMount(){
+  this.getData();
 }
 
 getData(){
@@ -47,6 +43,8 @@ getData(){
       {
         console.log(error);
       });
+
+      this.state.cardList.push(this.state.card);
       }
 
   });
