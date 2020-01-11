@@ -2,49 +2,23 @@ import React, {Component} from 'react';
 import {Card, CardBody, CardTitle, CardSubtitle, CardText} from 'reactstrap';
 import "./BottomCard.scss";
 import ReadMore from '../../ReadMore/ReadMore';
-import axios from 'axios';
 
 export default class BottomCard extends Component{
+   // eslint-disable-next-line
   constructor(props){
     super(props);
-    this.state={
-      articleTitle:"Article Title",
-      previewText:
-      "Lorem ipsum dolor sit amet, nec timeam docendi placerat ea, amet sententiae theophrastus ex ... Usu ad etiam clita nominati, pri putant iracundia ea. Te mei erat dicat aperiam, cum an euismod forensibus, nec an odio elit intellegebat. ... Et usu fierent detracto perfecto, ea odio volutpat splendide pri, solum forensibus est ei.",
-      author:"Author Name",
-      date:"MM/DD/YY"
-    }
-    this.getData();
   }
 
-  getData(){
-    axios.get('http://localhost:3000/posts')
-    .then(
-      (response) =>
-      {
-        this.setState({
-          articleTitle: this.response.icon,
-          previewText: this.response.previewText,
-          author: this.response.author,
-          date: this.response.date,
-        },
-      (error) =>
-      {
-        console.log(error);
-      });
-    });
-  }
 
   render(){
     return(
       <div>
         <Card>
           <CardBody>
-            <CardTitle>{this.state.articleTitle}</CardTitle>
-            <CardSubtitle>{this.state.date}</CardSubtitle>
-            <br/>
-            <CardText className="text">{this.state.previewText}</CardText>
-            <ReadMore />
+            <CardTitle>{this.props.card['author']}</CardTitle>
+            <CardSubtitle>{this.props.card['date']}</CardSubtitle>
+            <CardText className="text">{this.props.card['content']}</CardText>
+            <ReadMore content={this.props.card.content} author={this.props.card.author} icon={this.props.card.icon} date={this.props.date}/>
           </CardBody>
         </Card>
       </div>

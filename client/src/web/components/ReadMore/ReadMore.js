@@ -17,7 +17,7 @@ export default class FeaturedPost extends Component{
   render(){
     return(
       <Fragment>
-      <ViewFullPost isOpen={this.state.isFullOpen} toggle={this.toFull}/>
+      <ViewFullPost isOpen={this.state.isFullOpen} toggle={this.toFull} content={this.props.content} author={this.props.author} icon={this.props.icon} date={this.props.date}/>
       <Button className ="read" color="primary" onClick={this.toFull}>Read more</Button>
       </Fragment>
     );

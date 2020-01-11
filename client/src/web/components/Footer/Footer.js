@@ -16,13 +16,12 @@ export default class Footer extends Component{
       isLoginModalOpen:false,
       //isPostModalOpen:false,
       isLoggedIn:true,
-      numPosts:5,
+      numPosts:20,
     }
-    //this.getNumPosts();
+    this.getNumPosts();
   }
-/*
   getNumPosts=()=>{
-    axios.get('http://localhost:3000/')
+    axios.get('/posts/posts')
     .then((response)=>{
       this.setState({numPosts:this.response.numPost});
     },
@@ -30,7 +29,7 @@ export default class Footer extends Component{
       console.log(error);
     }
     )
-  }*/
+  }
 
   toggle=()=>{
     if(this.state.isLoggedIn)
