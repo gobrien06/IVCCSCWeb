@@ -22,7 +22,7 @@ constructor(props){
 initializeCards(){
   for(let i=0;i<this.props.numPosts;i++){
     this.getData();
-    this.state.cardList.append(this.state.card);
+    this.state.cardList.push(this.state.card);
   }
 }
 
