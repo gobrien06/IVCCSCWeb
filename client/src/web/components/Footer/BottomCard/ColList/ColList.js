@@ -27,7 +27,7 @@ initializeCards(){
 }
 
 getData(){
-  axios.get('/posts/posts')
+  axios.post('/posts/posts')
   .then(
     (response) =>
     {
