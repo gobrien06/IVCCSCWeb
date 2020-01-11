@@ -18,7 +18,7 @@ export default class FeaturedPost extends Component{
   }
 
   getData(){
-    axios.get('/posts/posts')
+    axios.post('/posts/posts')
     .then(
       (response) =>
       {
