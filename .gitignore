@@ -108,3 +108,5 @@ dist
 
 # VSCode files
 .vs
+
+.env

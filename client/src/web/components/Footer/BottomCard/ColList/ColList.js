@@ -17,33 +17,24 @@ constructor(props){
   }
 }
 
-componentWillMount(){
-  this.getData();
-}
-
-getData(){
-  axios.post('/posts/posts')
+getData(n){
+  axios.get('/posts/posts')
   .then(
     (response) =>
     {
-      let cardList = [];
-      for(let i=0;i<this.props.numPosts;i++){
-        this.setState({
-            content: response.data[i].content,
-            author: response.data[i].author,
-            date: response.data[i].date,
-            success: response.data.success,
-            icon: response.data[i].avatar,
-          });
-        cardList.append([this.state.content,this.state.author,this.state.date,this.state.icon]);
-    }
-    console.log(cardList);
-    return cardList;
+      this.setState({
+        content: response.data[n].content,
+        author: response.data[n].author,
+        icon: response.data[n].avatar,
+        date: response.data[n].date,
+        success: response.data.success,
+    });
+    console.log(response.data[n].content);
     },
-      (error) =>
-      {
-        console.log(error);
-      }
+    (error) =>
+    {
+      console.log(error);
+    }
   );
 
 }
@@ -51,12 +42,20 @@ getData(){
 
 showCards=()=>{
   let colList=[];
-  let n=0;
-  for(n; (n<(this.props.numPosts-((this.props.rowCount-1)*3)) && (n<3)) ;n++){
+  let overAllCount=(this.props.rowCount)*3;
+  console.log("total: " + this.props.numPosts);
+  while((overAllCount<this.props.numPosts) && (colList.length < 3)){
+    console.log("count: " + overAllCount);
+    this.getData(overAllCount);
+
     colList.push(<Col md="3">
-    <BottomCard card={(this.getData())[n]}/>
+    <BottomCard content={this.state.content} author={this.state.author}
+    icon = {this.state.avatar} date = {this.state.date}/>
     </Col>);
+
+    overAllCount++
   }
+
   return colList;
 }
 
@@ -68,4 +67,5 @@ render(){
   );
 }
 }
+
 
