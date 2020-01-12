@@ -6,6 +6,7 @@ import PostModal from './PostModal/PostModal';
 import LoginModal from '../LoginModal/LoginModal';
 import axios from 'axios';
 import BottomCard from './BottomCard/BottomCard';
+import TableRows from './BottomCard/RowList/tableRows';
 
 export default class Footer extends Component{
   constructor(props){
@@ -15,13 +16,14 @@ export default class Footer extends Component{
       isLoginModalOpen:false,
       //isPostModalOpen:false,
       postList:[],
-      numPosts:20,
+      numPosts:40,
     }
+    this.getPosts();
   }
 
-componentWillMount(){
-  this.getPosts();
-}
+
+
+
   getPosts=()=>{
     axios.get('/posts/posts')
     .then((response)=>{
@@ -32,7 +34,6 @@ componentWillMount(){
           postList: this.state.postList.concat(response.data[i]),
         })
       }
-      console.log(this.state.postList);
     },
     (error)=>{
       console.log(error);
@@ -52,49 +53,6 @@ componentWillMount(){
     this.setState({aboutUsOpen:!this.state.aboutUsOpen});
   }
 
-
-  renderTableRows() {
-    let numRows = (this.state.numPosts)/3;
-    for(let i=0;i<numRows;i++){
-       let startCard = ((numRows-1)*3);
-       let secondCard = (startCard)+1;
-       let thirdCard = (secondCard)+1;
-
-       numRows++;
-
-       if(thirdCard){
-         return(
-         <Row className="below">
-         <Col sm="3"></Col>
-         <Col sm="3"><BottomCard card={this.state.postList[startCard]}/></Col>
-         <Col sm="3"><BottomCard card={this.state.postList[secondCard]}/></Col>
-         <Col sm="3"><BottomCard card={this.state.postList[thirdCard]}/></Col>
-         </Row>
-         );
-       }
-       else if(secondCard){
-         return(
-           <Row className="below">
-           <Col sm="3"></Col>
-           <Col sm="3"><BottomCard card={this.state.postList[startCard]}/></Col>
-           <Col sm="3"><BottomCard card={this.state.postList[secondCard]}/></Col>
-           </Row>
-           );
-       }
-       else if(startCard){
-         return(
-           <Row className="below">
-           <Col sm="3"></Col>
-           <Col sm="3"><BottomCard card={this.state.postList[startCard]}/></Col>
-           </Row>
-           );
-       }
-       else{
-        console.log("made it out with: " + startCard);
-         break;
-       }
-   }
-  }
 
 
   //<Button outline color="primary" className="post" onClick={this.toggle}> Start Talking </Button>
@@ -121,6 +79,7 @@ componentWillMount(){
           <BottomCard card={this.state.postList[2]}/>
           </Col>
         </Row>
+        <TableRows numPosts={this.state.numPosts} postList={this.state.postList}/>
           <Row className="below">
           <Col md="3">
           </Col>
