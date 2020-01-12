@@ -1,0 +1,10 @@
+.read{
+  position:absolute;
+  top: 82%;
+}
+
+@media only screen and (max-width:650px){
+  .read{
+    top:70%;
+  }
+}

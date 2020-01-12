@@ -1,1 +1,27 @@
+.botcard{
+  height:50vh;
+  padding:3%;
+}
+.text{
+  overflow:hidden;
+  max-height:28vh;
+}
+
+
+
+
+.title{
+  font-weight:600;
+}
+
+.name{
+  font-weight:500;
+}
+
+@media only screen and (max-width:1000px){
+.text{
+  max-height:20vh;
+  overflow:hidden;
+}
+}
 

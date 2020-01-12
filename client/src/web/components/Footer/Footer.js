@@ -6,7 +6,7 @@ import PostModal from './PostModal/PostModal';
 import LoginModal from '../LoginModal/LoginModal';
 import axios from 'axios';
 import BottomCard from './BottomCard/BottomCard';
-import TableRows from './BottomCard/RowList/tableRows';
+import TableRows from './BottomCard/RowList/TableRows';
 
 export default class Footer extends Component{
   constructor(props){

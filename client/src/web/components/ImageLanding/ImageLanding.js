@@ -7,7 +7,7 @@ export default function ImageLanding(){
     <Row className="landing">
       <Col lg="8">
         <p className="leftimageheader">Where it happens.</p>
-        <p className="leftimagepara">Join us at room <b>B300</b> for our biweekly Friday meets, or stop by our Discord to talk!</p>
+        <p className="leftimagepara">Join us at CAANAPI (room <b>B353</b>) for our biweekly Friday meets, or stop by our Discord to talk!</p>
       </Col>
       <Col lg="4">
         <iframe title="discord" className="discordwidget" src="https://discordapp.com/widget?id=664619783676755969&theme=dark"

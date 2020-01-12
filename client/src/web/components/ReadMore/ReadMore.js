@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import {Button} from 'reactstrap';
 import ViewFullPost from './ViewFullPost/ViewFullPost';
+import './ReadMore.css';
 
 export default class FeaturedPost extends Component{
   constructor(props){

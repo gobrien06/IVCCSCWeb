@@ -20,6 +20,7 @@ p{
 }
 
 .icon{
+  border-radius:10px;
   position:relative;
   width:64px;
   height:64px;
@@ -53,6 +54,7 @@ p{
     -ms-transform: translate(35%,-50%);
     transform: translate(35%,-50%);
     font-family:'Open Sans', sans-serif;
+    overflow:hidden;
   }
 
   .card{

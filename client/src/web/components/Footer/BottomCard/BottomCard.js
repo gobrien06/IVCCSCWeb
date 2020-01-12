@@ -14,10 +14,10 @@ export default class BottomCard extends Component{
   render(){
     return(
       <div>
-        <Card>
+        <Card className="botcard">
           <CardBody>
-            <CardTitle>{this.props.card.date}</CardTitle>
-            <CardSubtitle>{this.props.card.author}</CardSubtitle>
+            <CardTitle className="title">{this.props.card.date}</CardTitle>
+            <CardSubtitle className="name">{this.props.card.author}</CardSubtitle>
             <CardText className="text">{this.props.card.content}</CardText>
             <ReadMore content={this.props.card.content} author={this.props.card.author} icon={this.props.card.avatar} date={this.props.card.date}/>
           </CardBody>
