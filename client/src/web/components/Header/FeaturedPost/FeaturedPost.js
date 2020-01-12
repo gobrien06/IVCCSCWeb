@@ -31,7 +31,6 @@ export default class FeaturedPost extends Component{
         },
       (error) =>
       {
-        console.log(this.state.success);
         console.log(error);
       });
     });
