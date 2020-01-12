@@ -7,6 +7,7 @@ export default class BottomCard extends Component{
    // eslint-disable-next-line
   constructor(props){
     super(props);
+    console.log(this.props);
   }
 
 
@@ -18,7 +19,7 @@ export default class BottomCard extends Component{
             <CardTitle>{this.props.card.date}</CardTitle>
             <CardSubtitle>{this.props.card.author}</CardSubtitle>
             <CardText className="text">{this.props.card.content}</CardText>
-            <ReadMore content={this.props.card.content} author={this.props.card.author} icon={this.props.card.icon} date={this.props.card.date}/>
+            <ReadMore content={this.props.card.content} author={this.props.card.author} icon={this.props.card.avatar} date={this.props.card.date}/>
           </CardBody>
         </Card>
       </div>

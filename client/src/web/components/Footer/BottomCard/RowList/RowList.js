@@ -17,7 +17,7 @@ export default class RowList extends Component{
         rowCount++;
         rowList.push(<Row className="below" key={i}>
           <Col md="3"></Col>
-          <ColList numPosts={this.props.numPosts} rowCount={rowCount}/>
+          <ColList numPosts={this.props.numPosts} rowCount={rowCount} />
           </Row>);
       }
     }
