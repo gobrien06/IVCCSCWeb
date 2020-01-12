@@ -4,26 +4,23 @@ const knex = require('../database/database');
 require('dotenv').config({path: '../.env'});
 
 function addPost(message) {
-    
+
     knex('posts').insert({
         id: message.id,
         author: message['member'].nickname ? message['member'].nickname : message['author'].username,
         avatar: message['author'].displayAvatarURL,
-        date: message.createdAt.toISOString(),        
+        date: message.createdAt.toISOString(),
         content: message.content
-    }).then( result => {console.log('Added message')}, result => {console.log(result)});
-}
+    }).then( result => {}, result => {});
 
 client.login(process.env.EMMA);
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
   for([id, guild] of client.guilds) {
       for([id, channel] of guild.channels) {
-        console.log(channel.name);
         if(channel.name == "announcements") {
             if(channel.type == 'text') {
-                channel.fetchMessages({limit: 100}).then(messages => { 
+                channel.fetchMessages({limit: 100}).then(messages => {
                     for([id, message] of messages) {
                         addPost(message);
                     }

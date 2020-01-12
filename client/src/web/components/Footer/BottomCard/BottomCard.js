@@ -7,7 +7,6 @@ export default class BottomCard extends Component{
    // eslint-disable-next-line
   constructor(props){
     super(props);
-    console.log(this.props);
   }
 
 

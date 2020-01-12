@@ -31,9 +31,7 @@ export default class PostModal extends Component{
 
     axios.post('http://localhost:3000', {userPost})
     .then((response) => {
-      console.log(response);
     }, (error) => {
-      console.log(error);
     });
   }
 

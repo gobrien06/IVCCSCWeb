@@ -29,11 +29,9 @@ getData(n){
         date: response.data[n].date,
         success: response.data.success,
     });
-    console.log(response.data[n].content);
     },
     (error) =>
     {
-      console.log(error);
     }
   );
 
@@ -43,9 +41,7 @@ getData(n){
 showCards=()=>{
   let colList=[];
   let overAllCount=(this.props.rowCount)*3;
-  console.log("total: " + this.props.numPosts);
   while((overAllCount<this.props.numPosts) && (colList.length < 3)){
-    console.log("count: " + overAllCount);
     this.getData(overAllCount);
 
     colList.push(<Col md="3">

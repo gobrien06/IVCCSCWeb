@@ -36,7 +36,6 @@ export default class Footer extends Component{
       }
     },
     (error)=>{
-      console.log(error);
     }
     )
   }
