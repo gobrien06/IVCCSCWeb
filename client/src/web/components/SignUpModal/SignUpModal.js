@@ -18,9 +18,7 @@ export default class SignUpModal extends Component{
 
     axios.post('http://localhost:3000/emails/insert', {email})
     .then((response) => {
-      console.log(response);
     }, (error) => {
-      console.log(error);
     });
   }
 

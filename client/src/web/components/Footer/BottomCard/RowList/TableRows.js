@@ -9,11 +9,8 @@ export default class TableRows extends Component {
     let elements=[];
 
     while(start < this.props.numPosts){
-      console.log("in once");
       numRows++;
       start = numRows*3;
-      console.log(start);
-      console.log(elements);
         if(this.props.postList[start+2]){
           elements.push(
           <Row className="below">

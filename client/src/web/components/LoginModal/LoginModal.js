@@ -24,10 +24,8 @@ export default class LoginModal extends Component{
 
     axios.post('http://localhost:3000', {user})
     .then((response) => {
-      console.log(response);
       this.setState({response:response});
     }, (error) => {
-      console.log(error);
     });
   }
 
