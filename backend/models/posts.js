@@ -9,7 +9,7 @@ function getPosts(res) {
             response[i] = {
                 author: row['author'], 
                 avatar: row['avatar'], 
-                date: row['date'], 
+                date: (new Date(row['date'])).toDateString(), 
                 content: row['content']
             };
             i++;
