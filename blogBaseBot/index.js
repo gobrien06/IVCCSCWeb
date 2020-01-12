@@ -1,7 +1,7 @@
 ﻿const Discord = require('discord.js');
 const client = new Discord.Client();
 const knex = require('../database/database');
-
+require('dotenv').config({path: '../.env'});
 
 function addPost(message) {
     
@@ -13,7 +13,6 @@ function addPost(message) {
         content: message.content
     }).then( result => {console.log('Added message')}, result => {console.log(result)});
 }
-
 
 client.login(process.env.EMMA);
 
