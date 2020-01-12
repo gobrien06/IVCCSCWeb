@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Input, FormGroup, Label, Button, Modal, ModalHeader, ModalBody, Form} from 'reactstrap';
-//import "./SignUpModal.scss";
+import "./SignUpModal.scss";
 import axios from 'axios';
 
 //copied loginmodal placeholder

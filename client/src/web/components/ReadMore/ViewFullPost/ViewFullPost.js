@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, Row, Col} from 'reactstrap';
+import './ViewFullPost.scss';
 
 //need admin/user permissions to edit or delete post
 export default class ViewFullPost extends Component{
@@ -23,17 +24,17 @@ export default class ViewFullPost extends Component{
   render(){
     return(
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="postreader" size="lg">
-      <ModalHeader>
+      <ModalHeader className="title">
         <Button  close onClick={this.props.toggle}
         className="closeRight"
         aria-label="Cancel"/>
         {this.props.author}
       </ModalHeader>
       <ModalBody>
-      <Row>
+      <Row className="date">
         <Col lg="2">
           <img className="icon" src={this.props.icon} alt="Icon" />
-          <p className ="date">
+          <p className ="name">
           <br/>
           {this.props.date}</p>
         </Col>

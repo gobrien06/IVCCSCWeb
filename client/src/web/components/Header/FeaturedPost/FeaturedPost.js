@@ -47,14 +47,14 @@ export default class FeaturedPost extends Component{
         <CardImg />
         <CardBody>
           <CardTitle className = "title" text="">
-            {this.state.author}
+            {this.state.date}
           </CardTitle>
           <Row>
             <Col md = "2" xs="4" sm="4" className = "side">
               <img className="icon" src={this.state.icon} alt="Icon" />
               <p className ="date">
-              ___________ <br />
-              {this.state.date}</p>
+              <br />
+              {this.state.author}</p>
             </Col>
             <Col md = "10" xs="8" sm="8">
               <p className="previewtext">{this.state.content}</p>
