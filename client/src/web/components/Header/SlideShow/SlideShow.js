@@ -83,7 +83,7 @@ export default class SlideShow extends Component {
         next={this.next}
         previous={this.previous}
       >
-        <CarouselIndicators items={items} activeIndex={this.state.activeIndex} onClickHandler={this.goTo} />
+        <CarouselIndicators items={items} activeIndex={this.state.activeIndex} onClickHandler={this.goTo} className="indicators" />
         {slides}
 
       </Carousel>

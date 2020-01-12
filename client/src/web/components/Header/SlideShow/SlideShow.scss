@@ -1,12 +1,11 @@
 .slideShow{
-  height:450px;
+  height:100%;
   width:100%;
   position:absolute;
 }
 .carousel img{
-  max-height:450px;
+  max-height:65vh;
   object-fit: cover !important;
   width:100%;
   box-shadow: inset 0 -200px 600px 0 rgba(57,57,57,0.5);
 }
-
