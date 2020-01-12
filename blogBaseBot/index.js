@@ -23,7 +23,7 @@ client.on('ready', () => {
         console.log(channel.name);
         if(channel.name == "announcements") {
             if(channel.type == 'text') {
-                channel.fetchMessages({limit: 50}).then(messages => { 
+                channel.fetchMessages({limit: 100}).then(messages => { 
                     for([id, message] of messages) {
                         addPost(message);
                     }

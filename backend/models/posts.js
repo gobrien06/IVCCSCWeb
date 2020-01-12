@@ -6,13 +6,13 @@ function getPosts(res) {
         response = {success: true, length: result.length};
         let i = 0;
         for(row of result) {
-                response[i] = {
-                    author: row['author'],
-                    avatar: row['avatar'],
-                    date: row['date'],
-                    content: row['content']
-                };
-                i++;
+            response[i] = {
+                author: row['author'], 
+                avatar: row['avatar'], 
+                date: (new Date(row['date'])).toDateString(), 
+                content: row['content']
+            };
+            i++;
         }
         res.json(response);
       }, result => {
