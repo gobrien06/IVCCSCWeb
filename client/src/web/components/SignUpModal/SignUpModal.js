@@ -9,8 +9,6 @@ export default class SignUpModal extends Component{
     super(props);
     this.state={
       email:'',
-      password:'',
-      response:'',
     }
   }
 
@@ -21,7 +19,6 @@ export default class SignUpModal extends Component{
     axios.post('http://localhost:3000/emails/insert', {email})
     .then((response) => {
       console.log(response);
-      this.setState({response:response});
     }, (error) => {
       console.log(error);
     });

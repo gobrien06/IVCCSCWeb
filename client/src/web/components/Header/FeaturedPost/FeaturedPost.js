@@ -18,7 +18,7 @@ export default class FeaturedPost extends Component{
   }
 
   getData(){
-    axios.post('/posts/posts')
+    axios.get('/posts/posts') //switch to GET?
     .then(
       (response) =>
       {
@@ -48,7 +48,7 @@ export default class FeaturedPost extends Component{
         <CardImg />
         <CardBody>
           <CardTitle className = "title" text="">
-            {this.state.date}
+            {this.state.author}
           </CardTitle>
           <Row>
             <Col md = "2" xs="4" sm="4" className = "side">
