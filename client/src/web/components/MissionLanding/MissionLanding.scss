@@ -31,3 +31,12 @@ p{
 }
 
 //Need proper mobile support
+@media only screen and (max-width:800px){
+  .mission{
+    position:relative;
+    background-image:linear-gradient(to top,#E6E6E6,#F0F0F0,#FFF,#FFF);
+    padding-top:0%;
+    padding-left:3%;
+    padding-right:3%;
+  }
+  }
