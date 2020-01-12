@@ -6,6 +6,7 @@ function getPosts(res) {
         response = {success: true, length: result.length};
         let i = 0;
         for(row of result) {
+<<<<<<< HEAD
                 response[i] = {
                     author: row['author'],
                     avatar: row['avatar'],
@@ -13,6 +14,15 @@ function getPosts(res) {
                     content: row['content']
                 };
                 i++;
+=======
+            response[i] = {
+                author: row['author'], 
+                avatar: row['avatar'], 
+                date: (new Date(row['date'])).toDateString(), 
+                content: row['content']
+            };
+            i++;
+>>>>>>> c0ee0e07... Changed format of date returned
         }
         res.json(response);
       }, result => {
