@@ -16,8 +16,7 @@ export default class SignUpModal extends Component{
   postUser=(e)=>{
     e.preventDefault();
     const email = this.state.email;
-
-    axios.post(process.env.REACT_PORT + '/emails/insert', {email})
+    axios.post(process.env.REACT_APP_BASE_URL + '/emails/insert/', {email})
     .then((response) => {
     }, (error) => {
     });

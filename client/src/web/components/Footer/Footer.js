@@ -25,7 +25,7 @@ export default class Footer extends Component{
 
 
   getPosts=()=>{
-    axios.get(process.env.REACT_PORT + '/posts/posts')
+    axios.get(process.env.REACT_APP_BASE_URL    + '/posts/posts/')
     .then((response)=>{
       this.setState({
         numPosts: response.data.length});
