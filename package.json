@@ -11,5 +11,8 @@
     "react-dom": "^16.7.0",
     "reactstrap": "^7.1.0",
     "sass": "^1.16.1"
+  },
+  "scripts": {
+    "start": "(cd client && HTTPS=true && serve -s build -l 80) & (cd discordBot && node index.js)"
   }
 }

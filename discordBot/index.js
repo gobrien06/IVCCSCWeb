@@ -12,7 +12,7 @@ function addPost(message) {
         date: message.createdAt.toISOString(),
         content: message.content
     }).then( result => {}, result => {});
-
+}
 client.login(process.env.EMMA);
 
 client.on('ready', () => {
