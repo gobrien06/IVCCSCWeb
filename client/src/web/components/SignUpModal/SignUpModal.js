@@ -3,6 +3,7 @@ import {Input, FormGroup, Label, Button, Modal, ModalHeader, ModalBody, Form} fr
 import "./SignUpModal.scss";
 import axios from 'axios';
 
+
 //copied loginmodal placeholder
 export default class SignUpModal extends Component{
   constructor(props){
@@ -16,7 +17,7 @@ export default class SignUpModal extends Component{
     e.preventDefault();
     const email = this.state.email;
 
-    axios.post('http://localhost:3000/emails/insert', {email})
+    axios.post(process.env.REACT_PORT + '/emails/insert', {email})
     .then((response) => {
     }, (error) => {
     });
