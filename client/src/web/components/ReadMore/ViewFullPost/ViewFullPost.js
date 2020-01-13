@@ -28,7 +28,7 @@ export default class ViewFullPost extends Component{
         <Button  close onClick={this.props.toggle}
         className="closeRight"
         aria-label="Cancel"/>
-        {this.props.author}
+        {this.props.date}
       </ModalHeader>
       <ModalBody>
       <Row className="date">
@@ -36,7 +36,7 @@ export default class ViewFullPost extends Component{
           <img className="icon" src={this.props.icon} alt="Icon" />
           <p className ="name">
           <br/>
-          {this.props.date}</p>
+          {this.props.author}</p>
         </Col>
         <Col lg="10">
           <p className="fullText">{this.props.content}</p>

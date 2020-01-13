@@ -1,6 +1,8 @@
 .read{
   position:absolute;
   top: 82%;
+  margin-right:2%;
+  margin-bottom:1%;
 }
 
 @media only screen and (max-width:650px){
