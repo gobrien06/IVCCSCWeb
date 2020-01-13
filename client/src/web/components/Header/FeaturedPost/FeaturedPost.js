@@ -4,6 +4,7 @@ import './FeaturedPost.scss';
 import ReadMore from '../../ReadMore/ReadMore';
 import axios from 'axios';
 
+
 export default class FeaturedPost extends Component{
   constructor(props){
     super(props);
@@ -18,7 +19,7 @@ export default class FeaturedPost extends Component{
   }
 
   getData(){
-    axios.get('/posts/posts') //switch to GET?
+    axios.get(process.env.EXPRESS_PORT + '/posts/posts') //switch to GET?
     .then(
       (response) =>
       {
