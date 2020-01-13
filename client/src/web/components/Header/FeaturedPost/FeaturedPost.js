@@ -19,7 +19,7 @@ export default class FeaturedPost extends Component{
   }
 
   getData(){
-    axios.get(process.env.EXPRESS_PORT + '/posts/posts') //switch to GET?
+    axios.get(process.env.REACT_APP_BASE_URL + '/posts/posts')
     .then(
       (response) =>
       {
