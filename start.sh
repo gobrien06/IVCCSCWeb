@@ -1,3 +1,3 @@
 #!/bin/bash
 
-(cd 
+sudo nohup npm start 
