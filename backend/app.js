@@ -7,12 +7,12 @@ var logger = require('morgan');
 var cors = require('cors');
 
 var app = express();
-
 var routes = require('./routes');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.all('*', (req, res, next) => {
   if(!req.hostname.match(/^www\..*/i)) {
     return res.redirect('https://www.' + req.hostname + req.url);
@@ -25,7 +25,6 @@ app.all('*', (req, res, next) => {
 
 app.use(cors());
 app.use(express.static('../client/build'));
-
 app.use(routes);
 
 // catch 404 and forward to error handler
