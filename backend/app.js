@@ -7,15 +7,24 @@ var logger = require('morgan');
 var cors = require('cors');
 
 var app = express();
-app.use(cors());
 
 var routes = require('./routes');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-console.log('asdf');
+app.all('*', (req, res, next) => {
+  if(!req.hostname.match(/^www\..*/i)) {
+    return res.redirect('https://www.' + req.hostname + req.url);
+  }
+  if(!req.secure) {
+    return res.redirect('https://' + req.hostname + req.url);
+  }  
+  next();
+});
+
+app.use(cors());
+app.use(express.static('../client/build'));
 
 app.use(routes);
 
