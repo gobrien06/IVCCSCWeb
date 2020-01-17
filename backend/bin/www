@@ -11,16 +11,17 @@ var https = require('https');
 require('dotenv').config({path: '../.env'});
 
 const fs = require('fs');
-
-var privateKey  = fs.readFileSync(process.env.privkey, 'utf8');
-var certificate = fs.readFileSync(process.env.cert, 'utf8');
-
+if(process.env.SSL_ON) {
+  var privateKey  = fs.readFileSync(process.env.privkey, 'utf8');
+  var certificate = fs.readFileSync(process.env.cert, 'utf8');
+}
 
 /**
  * Create HTTP server.
  */
 
 http.createServer(app).listen(80);
-https.createServer({key: privateKey, cert: certificate}, app).listen(443);
-
+if(process.env.SSL_ON) {
+  https.createServer({key: privateKey, cert: certificate}, app).listen(443);
+}
 

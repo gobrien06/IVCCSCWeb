@@ -13,15 +13,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.all('*', (req, res, next) => {
-  if(!req.hostname.match(/^www\..*/i)) {
-    return res.redirect('https://www.' + req.hostname + req.url);
-  }
-  if(!req.secure) {
-    return res.redirect('https://' + req.hostname + req.url);
-  }  
-  next();
-});
+if(process.env.SSL_ON) {
+  app.all('*', (req, res, next) => {
+    if(!req.hostname.match(/^www\..*/i)) {
+      return res.redirect('https://www.' + req.hostname + req.url);
+    }
+    if(!req.secure) {
+      return res.redirect('https://' + req.hostname + req.url);
+    }  
+    next();
+  });
+}
 
 app.use(cors());
 app.use(express.static('../client/build'));
